@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TCRMService xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CTCCustomerHubRequest.xsd">
+    <RequestControl>
+        <requestID>06000001</requestID>
+        <DWLControl>
+            <requesterName>Segment-QA</requesterName>
+            <requesterLanguage>100</requesterLanguage>
+        </DWLControl>
+    </RequestControl>
+    <TCRMTx>
+        <TCRMTxType>addCTCPartySegment</TCRMTxType>
+        <TCRMTxObject>CTCPartySegmentBObj</TCRMTxObject>
+        <TCRMObject>
+              <CTCPartySegmentBObj>
+                 <PartySegmentpkId></PartySegmentpkId>
+                 <ContId></ContId>
+                 <SegmentProvider>CACE</SegmentProvider>
+                 <BusinessGroupName>CTR</BusinessGroupName>
+                 <SegmentTypeName>Deal Seeker</SegmentTypeName>
+                 <SegmentValue>Occasional</SegmentValue>
+                 <SegmentCategoryType>Opportunity</SegmentCategoryType>
+                 <EffectiveStartDt></EffectiveStartDt>
+                 <EffectiveEndDt></EffectiveEndDt>
+                 <CTCPartySegmentLastUpdateDate>2011-09-19 19:00:38.953</CTCPartySegmentLastUpdateDate>
+                 <CTCPartySegmentLastUpdateUser></CTCPartySegmentLastUpdateUser>
+                 <CTCPartySegmentLastUpdateTxId></CTCPartySegmentLastUpdateTxId>
+              </CTCPartySegmentBObj>
+        </TCRMObject>
+    </TCRMTx>
+</TCRMService>
