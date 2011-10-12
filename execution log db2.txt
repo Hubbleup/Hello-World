@@ -1,0 +1,288 @@
+------------------------------ Commands Entered ------------------------------
+connect to LIVE ;
+------------------------------------------------------------------------------
+connect to LIVE 
+
+   Database Connection Information
+
+ Database server        = DB2/NT 9.7.1
+ SQL authorization ID   = NAWIN
+ Local database alias   = LIVE
+
+
+A JDBC connection to the target has succeeded.
+------------------------------ Commands Entered ------------------------------
+update NAWIN."LIVE_MILLION" SET MAIL_ID1 = FIRST_NAME ||'.' || LAST_NAME ||'@abcd.com',MAIL_ID2 = FIRST_NAME ||'_' || LAST_NAME ||'@abcd.com' where LAST_NAME is not null AND FIRST_NAME is not null;
+------------------------------------------------------------------------------
+update NAWIN."LIVE_MILLION" SET MAIL_ID1 = FIRST_NAME ||'.' || LAST_NAME ||'@abcd.com',MAIL_ID2 = FIRST_NAME ||'_' || LAST_NAME ||'@abcd.com' where LAST_NAME is not null AND FIRST_NAME is not null
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+update MILLION.Million SET COUNTRY1 = 'USA', COUNTRY2 = 'USA';
+------------------------------------------------------------------------------
+update MILLION.Million SET COUNTRY1 = 'USA', COUNTRY2 = 'USA'
+DB21034E  The command was processed as an SQL statement because it was not a 
+valid Command Line Processor command.  During SQL processing it returned:
+SQL0204N  "MILLION.MILLION" is an undefined name.  SQLSTATE=42704
+
+SQL0204N  "MILLION.MILLION                                                       " is an undefined name.
+
+Explanation: 
+
+This error is caused by one of the following:
+
+*  The object identified by "<name>" is not defined in the database.
+*  The object identified by "<name>" is defined in a module and is not a
+   published module object and it was referenced from outside the
+   module.
+*  The data partition identified by "<name>" is not defined on the
+   table.
+*  A data type is being used. This error can occur for the following
+   reasons: 
+   *  If "<name>" is qualified, then a data type with this name does not
+      exist in either the schema that matches the qualifier or the
+      module that matches the qualifier that was found first based on
+      user's SQL path.
+   *  If "<name>" is unqualified, then the user's path does not contain
+      the schema to which the desired data type belongs or the data type
+      is not defined in the module if the reference is within a module
+      routine.
+   *  The data type does not exist in the database with a create
+      timestamp earlier than the time the package was bound (applies to
+      static statements).
+   *  If the data type is in the UNDER clause of a CREATE TYPE
+      statement, the type name may be the same as the type being
+      defined, which is not valid.
+
+*  A function is being referenced in one of: 
+   *  a DROP FUNCTION statement
+   *  a COMMENT ON FUNCTION statement
+   *  the SOURCE clause of a CREATE FUNCTION statement 
+
+      If "<name>" is qualified, then the function does not exist. If
+      "<name>" is unqualified, then a function of this name does not
+      exist in any schema of the current path.
+
+       
+
+      Note that a function cannot be sourced on the COALESCE,
+      DBPARTITIONNUM, GREATEST, HASHEDVALUE, LEAST, MAX (scalar), MIN
+      (scalar), NULLIF, RID, NVL, RAISE_ERROR, TYPE_ID, TYPE_NAME,
+      TYPE_SCHEMA, or VALUE built-in functions.
+
+*  The element named "<name>" is used on the right side of the UNDER
+   clause in CREATE SECURITY LABEL COMPONENT statement but has not yet
+   been defined as being ROOT or being UNDER some other element
+*  The security label component element named "<name>" has not yet been
+   defined.
+*  One of the following scalar functions specified a security policy
+   identified by "<name>" which is not defined in the database. 
+   *  SECLABEL
+   *  SECLABEL_TO_CHAR
+   *  SECLABEL_BY_NAME
+
+This return code can be generated for any type of database object.
+
+Federated system users: the object identified by "<name>" is not defined
+in the database or "<name>" is not a nickname in a DROP NICKNAME
+statement.
+
+Some data sources do not provide the appropriate values for "<name>". In
+these cases, the message token will have the following format:
+"OBJECT:<data source> TABLE/VIEW", indicating that the actual value for
+the specified data source is unknown.
+
+The statement cannot be processed.
+
+User response: 
+
+Ensure that the object name (including any required qualifiers) is
+correctly specified in the SQL statement and it exists. If the name
+refers to a data partition, query the catalog table
+SYSCAT.DATAPARTITIONS to find the names of all the data partitions for a
+table. For missing data type or function in SOURCE clause, it may be
+that the object does not exist, OR it may be that the object does exist
+in some schema, but the schema is not present in your path.
+
+For the CREATE or ALTER SECURITY LABEL COMPONENT statement, make sure
+that each element specified as a reference element value for positioning
+the location of a new element value already exists in the security label
+component.
+
+For the CREATE SECURITY LABEL COMPONENT statement, make sure that each
+element is specified as either ROOT or as the child in an UNDER clause
+before specifying it as the parent in an UNDER clause.
+
+For the scalar functions SECLABEL, SECLABEL_TO_CHAR or SECLABEL_BY_NAME,
+ensure that a valid security policy was specified for the argument
+security-policy-name.
+
+Federated system users: if the statement is DROP NICKNAME, make sure the
+object is actually a nickname. The object might not exist in the
+federated database or at the data source. Verify the existence of the
+federated database objects (if any) and the data source objects (if
+any).
+
+sqlcode: -204
+
+sqlstate: 42704
+
+------------------------------ Commands Entered ------------------------------
+update NAWIN."LIVE_MILLION" SET COUNTRY1 = 'USA', COUNTRY2 = 'USA';
+------------------------------------------------------------------------------
+update NAWIN."LIVE_MILLION" SET COUNTRY1 = 'USA', COUNTRY2 = 'USA'
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+update DB2ADMIN.ONE_MILLION_RECORD SET CITY2 = CITY1;
+------------------------------------------------------------------------------
+update DB2ADMIN.ONE_MILLION_RECORD SET CITY2 = CITY1
+DB21034E  The command was processed as an SQL statement because it was not a 
+valid Command Line Processor command.  During SQL processing it returned:
+SQL0204N  "DB2ADMIN.ONE_MILLION_RECORD" is an undefined name.  SQLSTATE=42704
+
+SQL0204N  "DB2ADMIN.ONE_MILLION_RECORD                                           " is an undefined name.
+
+Explanation: 
+
+This error is caused by one of the following:
+
+*  The object identified by "<name>" is not defined in the database.
+*  The object identified by "<name>" is defined in a module and is not a
+   published module object and it was referenced from outside the
+   module.
+*  The data partition identified by "<name>" is not defined on the
+   table.
+*  A data type is being used. This error can occur for the following
+   reasons: 
+   *  If "<name>" is qualified, then a data type with this name does not
+      exist in either the schema that matches the qualifier or the
+      module that matches the qualifier that was found first based on
+      user's SQL path.
+   *  If "<name>" is unqualified, then the user's path does not contain
+      the schema to which the desired data type belongs or the data type
+      is not defined in the module if the reference is within a module
+      routine.
+   *  The data type does not exist in the database with a create
+      timestamp earlier than the time the package was bound (applies to
+      static statements).
+   *  If the data type is in the UNDER clause of a CREATE TYPE
+      statement, the type name may be the same as the type being
+      defined, which is not valid.
+
+*  A function is being referenced in one of: 
+   *  a DROP FUNCTION statement
+   *  a COMMENT ON FUNCTION statement
+   *  the SOURCE clause of a CREATE FUNCTION statement 
+
+      If "<name>" is qualified, then the function does not exist. If
+      "<name>" is unqualified, then a function of this name does not
+      exist in any schema of the current path.
+
+       
+
+      Note that a function cannot be sourced on the COALESCE,
+      DBPARTITIONNUM, GREATEST, HASHEDVALUE, LEAST, MAX (scalar), MIN
+      (scalar), NULLIF, RID, NVL, RAISE_ERROR, TYPE_ID, TYPE_NAME,
+      TYPE_SCHEMA, or VALUE built-in functions.
+
+*  The element named "<name>" is used on the right side of the UNDER
+   clause in CREATE SECURITY LABEL COMPONENT statement but has not yet
+   been defined as being ROOT or being UNDER some other element
+*  The security label component element named "<name>" has not yet been
+   defined.
+*  One of the following scalar functions specified a security policy
+   identified by "<name>" which is not defined in the database. 
+   *  SECLABEL
+   *  SECLABEL_TO_CHAR
+   *  SECLABEL_BY_NAME
+
+This return code can be generated for any type of database object.
+
+Federated system users: the object identified by "<name>" is not defined
+in the database or "<name>" is not a nickname in a DROP NICKNAME
+statement.
+
+Some data sources do not provide the appropriate values for "<name>". In
+these cases, the message token will have the following format:
+"OBJECT:<data source> TABLE/VIEW", indicating that the actual value for
+the specified data source is unknown.
+
+The statement cannot be processed.
+
+User response: 
+
+Ensure that the object name (including any required qualifiers) is
+correctly specified in the SQL statement and it exists. If the name
+refers to a data partition, query the catalog table
+SYSCAT.DATAPARTITIONS to find the names of all the data partitions for a
+table. For missing data type or function in SOURCE clause, it may be
+that the object does not exist, OR it may be that the object does exist
+in some schema, but the schema is not present in your path.
+
+For the CREATE or ALTER SECURITY LABEL COMPONENT statement, make sure
+that each element specified as a reference element value for positioning
+the location of a new element value already exists in the security label
+component.
+
+For the CREATE SECURITY LABEL COMPONENT statement, make sure that each
+element is specified as either ROOT or as the child in an UNDER clause
+before specifying it as the parent in an UNDER clause.
+
+For the scalar functions SECLABEL, SECLABEL_TO_CHAR or SECLABEL_BY_NAME,
+ensure that a valid security policy was specified for the argument
+security-policy-name.
+
+Federated system users: if the statement is DROP NICKNAME, make sure the
+object is actually a nickname. The object might not exist in the
+federated database or at the data source. Verify the existence of the
+federated database objects (if any) and the data source objects (if
+any).
+
+sqlcode: -204
+
+sqlstate: 42704
+
+------------------------------ Commands Entered ------------------------------
+update NAWIN."LIVE_MILLION" SET CITY2 = CITY1;
+------------------------------------------------------------------------------
+update NAWIN."LIVE_MILLION" SET CITY2 = CITY1
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Miss';
+------------------------------------------------------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Miss'
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Mrs';
+------------------------------------------------------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Mrs'
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Male' where Title = 'Mr';
+------------------------------------------------------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Male' where Title = 'Mr'
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Ms';
+------------------------------------------------------------------------------
+Update NAWIN."LIVE_MILLION" SET GENDER = 'Female' where Title = 'Ms'
+DB20000I  The SQL command completed successfully.
+
+------------------------------ Commands Entered ------------------------------
+update NAWIN."LIVE_MILLION" SET ZIPCODE4 ='1232' where ZIPCODE4 = '';
+------------------------------------------------------------------------------
+update NAWIN."LIVE_MILLION" SET ZIPCODE4 ='1232' where ZIPCODE4 = ''
+SQL0100W  No row was found for FETCH, UPDATE or DELETE; or the result of a 
+query is an empty table.  SQLSTATE=02000
+
+------------------------------ Commands Entered ------------------------------
+update NAWIN."LIVE_MILLION" SET ZIPCODE4 ='1232' where ZIPCODE4 is null;
+------------------------------------------------------------------------------
+update NAWIN."LIVE_MILLION" SET ZIPCODE4 ='1232' where ZIPCODE4 is null
+DB20000I  The SQL command completed successfully.
+
